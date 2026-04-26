@@ -1,5 +1,4 @@
 let userId = null;
-
 function login(){
   fetch("/login",{
     method:"POST",
@@ -12,17 +11,14 @@ function login(){
   .then(res=>res.json())
   .then(data=>{
     if(data.status==="ok"){
-      userId = data.user.id;
-      loadUser();
       loginBox.style.display="none";
-app.style.display="flex";
-dashboard.classList.remove("hidden");
+      app.style.display="flex";   // 🔥 INI PENTING
+      loadUser();
     }else{
       alert("Login gagal");
     }
   })
 }
-
 function loadUser(){
   fetch("/user/"+userId)
   .then(res=>res.json())
