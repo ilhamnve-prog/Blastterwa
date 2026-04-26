@@ -1,54 +1,73 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Blastter</title>
-<link rel="stylesheet" href="style.css">
+  <title>Blastter Dashboard</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 
-<body>
+<body class="bg-slate-900 text-white">
 
-<div class="sidebar">
-  <h2>Blastter</h2>
-  <p>Dashboard</p>
-  <p>WhatsApp</p>
-  <p>Saldo</p>
-</div>
+<!-- SIDEBAR -->
+<div class="flex">
 
-<div class="main">
-
-  <div class="topbar">
-    <h3 id="name"></h3>
-    <button onclick="logout()">Logout</button>
+  <div class="w-64 h-screen bg-slate-800 p-5">
+    <h2 class="text-2xl font-bold mb-5">Blastter</h2>
+    <ul class="space-y-3">
+      <li>🏠 Dashboard</li>
+      <li>📱 WhatsApp</li>
+      <li>💰 Saldo</li>
+      <li>⚙️ Settings</li>
+    </ul>
   </div>
 
-  <div id="loginBox">
-    <input id="user" placeholder="username">
-    <input id="pass" type="password" placeholder="password">
-    <button onclick="login()">Login</button>
-    <button onclick="register()">Register</button>
-  </div>
+  <!-- MAIN -->
+  <div class="flex-1 p-6">
 
-  <div id="dashboard" style="display:none;">
-
-    <div class="cards">
-      <div class="card">
-        <h4>Saldo</h4>
-        <h1 id="balance"></h1>
-      </div>
-      <div class="card">
-        <h4>Pesan</h4>
-        <h1>120</h1>
-      </div>
+    <!-- TOPBAR -->
+    <div class="flex justify-between mb-6">
+      <h2 class="text-xl">Dashboard</h2>
+      <button onclick="logout()" class="bg-red-500 px-3 py-1 rounded">Logout</button>
     </div>
 
-    <div class="card big">
-      <h3>Menu Utama</h3>
-      <button>📱 Kirim WA</button>
-      <button>💰 Topup</button>
+    <!-- LOGIN -->
+    <div id="loginBox" class="bg-slate-800 p-5 rounded w-80">
+      <h3 class="mb-3">Login</h3>
+      <input id="user" placeholder="username" class="w-full mb-2 p-2 rounded bg-slate-700">
+      <input id="pass" type="password" placeholder="password" class="w-full mb-2 p-2 rounded bg-slate-700">
+      <button onclick="login()" class="w-full bg-blue-500 p-2 rounded mb-2">Login</button>
+      <button onclick="register()" class="w-full bg-green-500 p-2 rounded">Register</button>
+    </div>
+
+    <!-- DASHBOARD -->
+    <div id="dashboard" class="hidden">
+
+      <!-- CARDS -->
+      <div class="grid grid-cols-2 gap-4">
+        <div class="bg-slate-800 p-5 rounded">
+          <h4>Saldo</h4>
+          <h1 id="balance" class="text-2xl"></h1>
+        </div>
+
+        <div class="bg-slate-800 p-5 rounded">
+          <h4>User</h4>
+          <h1 id="name"></h1>
+        </div>
+      </div>
+
+      <!-- MENU -->
+      <div class="mt-5 grid grid-cols-2 gap-4">
+        <button class="bg-slate-700 p-4 rounded">📱 Kirim WA</button>
+        <button onclick="topup()" class="bg-slate-700 p-4 rounded">💰 Topup</button>
+      </div>
+
     </div>
 
   </div>
-
 </div>
 
 <script src="script.js"></script>
