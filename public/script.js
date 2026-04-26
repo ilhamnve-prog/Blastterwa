@@ -15,6 +15,7 @@ function login(){
       userId = data.user.id;
       loadUser();
       loginBox.style.display="none";
+app.style.display="flex";
 dashboard.classList.remove("hidden");
     }else{
       alert("Login gagal");
