@@ -40,3 +40,21 @@ function topup(){
     })
   }).then(()=>loadUser())
 }
+function register(){
+  fetch("/register",{
+    method:"POST",
+    headers:{"Content-Type":"application/json"},
+    body:JSON.stringify({
+      username: user.value,
+      password: pass.value
+    })
+  })
+  .then(res=>res.json())
+  .then(data=>{
+    if(data.status==="ok"){
+      alert("Register berhasil, silakan login");
+    }else{
+      alert("Register gagal");
+    }
+  })
+}
