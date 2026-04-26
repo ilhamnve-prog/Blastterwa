@@ -58,3 +58,6 @@ function register(){
     }
   })
 }
+function logout(){
+  location.reload();
+}
