@@ -1,44 +1,51 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Blastter Dashboard</title>
+<title>Blastter</title>
 <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<div class="header">
+<div class="sidebar">
   <h2>Blastter</h2>
-  <button onclick="logout()">Logout</button>
+  <p>Dashboard</p>
+  <p>WhatsApp</p>
+  <p>Saldo</p>
 </div>
 
-<div class="container">
+<div class="main">
 
-  <!-- LOGIN -->
+  <div class="topbar">
+    <h3 id="name"></h3>
+    <button onclick="logout()">Logout</button>
+  </div>
+
   <div id="loginBox">
-    <h2>Login</h2>
     <input id="user" placeholder="username">
     <input id="pass" type="password" placeholder="password">
     <button onclick="login()">Login</button>
     <button onclick="register()">Register</button>
   </div>
 
-  <!-- DASHBOARD -->
   <div id="dashboard" style="display:none;">
 
-    <div class="card">
-      <h3 id="name"></h3>
-      <h1 id="balance"></h1>
+    <div class="cards">
+      <div class="card">
+        <h4>Saldo</h4>
+        <h1 id="balance"></h1>
+      </div>
+      <div class="card">
+        <h4>Pesan</h4>
+        <h1>120</h1>
+      </div>
     </div>
 
-    <div class="grid">
-      <div class="box">📱 WhatsApp</div>
-      <div class="box">👥 Referral</div>
-      <div class="box">💰 Withdraw</div>
-      <div class="box">📊 Statistik</div>
+    <div class="card big">
+      <h3>Menu Utama</h3>
+      <button>📱 Kirim WA</button>
+      <button>💰 Topup</button>
     </div>
-
-    <button onclick="topup()">+ Tambah Saldo</button>
 
   </div>
 
