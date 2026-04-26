@@ -1,26 +1,46 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Blastter</title>
+<title>Blastter Dashboard</title>
 <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
+<div class="header">
+  <h2>Blastter</h2>
+  <button onclick="logout()">Logout</button>
+</div>
+
 <div class="container">
 
-<h2>Login Blastter</h2>
-<input id="user" placeholder="username">
-<input id="pass" type="password" placeholder="password">
-<button onclick="login()">Login</button>
-<button onclick="register()">Register</button>
-<div id="dashboard" style="display:none;">
-  <div class="card">
-    <h3 id="name"></h3>
-    <h1 id="balance"></h1>
-    <button onclick="topup()">Tambah Saldo</button>
+  <!-- LOGIN -->
+  <div id="loginBox">
+    <h2>Login</h2>
+    <input id="user" placeholder="username">
+    <input id="pass" type="password" placeholder="password">
+    <button onclick="login()">Login</button>
+    <button onclick="register()">Register</button>
   </div>
-</div>
+
+  <!-- DASHBOARD -->
+  <div id="dashboard" style="display:none;">
+
+    <div class="card">
+      <h3 id="name"></h3>
+      <h1 id="balance"></h1>
+    </div>
+
+    <div class="grid">
+      <div class="box">📱 WhatsApp</div>
+      <div class="box">👥 Referral</div>
+      <div class="box">💰 Withdraw</div>
+      <div class="box">📊 Statistik</div>
+    </div>
+
+    <button onclick="topup()">+ Tambah Saldo</button>
+
+  </div>
 
 </div>
 
