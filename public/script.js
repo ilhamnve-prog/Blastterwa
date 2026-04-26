@@ -62,3 +62,11 @@ function register(){
 function logout(){
   location.reload();
 }
+function showPage(page){
+  document.getElementById("dashboardPage").style.display="none";
+  document.getElementById("waPage").style.display="none";
+  document.getElementById("saldoPage").style.display="none";
+  document.getElementById("settingPage").style.display="none";
+
+  document.getElementById(page + "Page").style.display="block";
+}
