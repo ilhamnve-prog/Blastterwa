@@ -19,7 +19,7 @@ db.serialize(() => {
   )`);
 });
 
-db.run(`CREATE TABLE IF NOT EXISTS transactions (
+  db.run(`CREATE TABLE IF NOT EXISTS transactions (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   user_id INTEGER,
   type TEXT,
