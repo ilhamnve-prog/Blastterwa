@@ -18,6 +18,14 @@ db.serialize(() => {
     balance INTEGER DEFAULT 0
   )`);
 });
+
+db.run(`CREATE TABLE IF NOT EXISTS transactions (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  user_id INTEGER,
+  type TEXT,
+  amount INTEGER,
+  created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+)`);
 app.post("/register", (req, res) => {
   const { username, password } = req.body;
 
