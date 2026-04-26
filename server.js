@@ -56,7 +56,15 @@ app.get("/user/:id", (req, res) => {
     res.json(row);
   });
 });
-
+app.get("/transactions/:id", (req, res) => {
+  db.all(
+    "SELECT * FROM transactions WHERE user_id=? ORDER BY id DESC",
+    [req.params.id],
+    (err, rows) => {
+      res.json(rows);
+    }
+  );
+});
 app.post("/topup", (req, res) => {
   const { id, amount } = req.body;
 
