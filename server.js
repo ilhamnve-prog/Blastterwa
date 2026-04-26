@@ -18,7 +18,18 @@ db.serialize(() => {
     balance INTEGER DEFAULT 0
   )`);
 });
+app.post("/register", (req, res) => {
+  const { username, password } = req.body;
 
+  db.run(
+    "INSERT INTO users (username, password) VALUES (?, ?)",
+    [username, password],
+    function (err) {
+      if (err) return res.json({ status: "error" });
+      res.json({ status: "ok" });
+    }
+  );
+});
 app.post("/login", (req, res) => {
   const { username, password } = req.body;
 
