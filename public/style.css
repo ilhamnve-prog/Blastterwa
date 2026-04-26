@@ -50,3 +50,17 @@ button {
 .big {
   margin-top:20px;
 }
+.sidebar {
+  width:200px;
+  background:#08121f;
+  padding:20px;
+}
+
+.main {
+  flex:1;
+  padding:20px;
+}
+
+#app {
+  display:flex;
+}
