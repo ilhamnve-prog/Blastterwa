@@ -67,3 +67,14 @@ function showPage(page){
 
   document.getElementById(page + "Page").style.display="block";
 }
+function loadTransactions(){
+  fetch("/transactions/" + userId)
+  .then(res=>res.json())
+  .then(data=>{
+    let html = "";
+    data.forEach(trx=>{
+      html += `<p>${trx.type} - Rp ${trx.amount}</p>`;
+    });
+    document.getElementById("history").innerHTML = html;
+  });
+}
