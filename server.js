@@ -55,7 +55,15 @@ app.post("/topup", (req, res) => {
   db.run(
     "UPDATE users SET balance = balance + ? WHERE id=?",
     [amount, id],
-    () => res.json({ status: "ok" })
+    () => {
+
+      db.run(
+        "INSERT INTO transactions (user_id, type, amount) VALUES (?, ?, ?)",
+        [id, "topup", amount]
+      );
+
+      res.json({ status: "ok" });
+    }
   );
 });
 
