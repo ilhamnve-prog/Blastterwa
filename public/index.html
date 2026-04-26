@@ -73,3 +73,47 @@
 <script src="script.js"></script>
 </body>
 </html>
+<div id="loginBox">
+  <h2>Login</h2>
+  <input id="user" placeholder="username">
+  <input id="pass" type="password" placeholder="password">
+  <button onclick="login()">Login</button>
+  <button onclick="register()">Register</button>
+</div>
+
+<div id="app" style="display:none;">
+
+  <!-- SIDEBAR -->
+  <div class="sidebar">
+    <p onclick="showPage('dashboard')">Dashboard</p>
+    <p onclick="showPage('wa')">WhatsApp</p>
+    <p onclick="showPage('saldo')">Saldo</p>
+    <p onclick="showPage('setting')">Settings</p>
+    <button onclick="logout()">Logout</button>
+  </div>
+
+  <!-- HALAMAN -->
+  <div class="main">
+
+    <div id="dashboardPage">
+      <h2>Dashboard</h2>
+      <h1 id="balance"></h1>
+    </div>
+
+    <div id="waPage" style="display:none;">
+      <h2>WhatsApp</h2>
+      <p>Fitur kirim pesan nanti</p>
+    </div>
+
+    <div id="saldoPage" style="display:none;">
+      <h2>Saldo</h2>
+      <button onclick="topup()">Topup</button>
+    </div>
+
+    <div id="settingPage" style="display:none;">
+      <h2>Settings</h2>
+    </div>
+
+  </div>
+
+</div>
